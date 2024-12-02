@@ -1,0 +1,321 @@
+Task 1
+
+
+
+public class task1{
+  public static void main(String []args){
+     int initiate = 18;
+   
+     while(initiate <= 63){
+         System.out.print(initiate);
+         initiate += 9;
+         if(initiate<=63){
+         System.out.print(",");
+         }
+     }
+  }
+}
+
+
+
+
+Task 2
+
+
+
+public class task2{
+  public static void main(String []args){
+     int initiate = 18;
+   
+     while(initiate <= 63){
+         if(initiate%2==0){
+           System.out.print(initiate);}
+         else{
+           System.out.print(-initiate);}
+         initiate += 9;
+         if(initiate <= 63){
+         System.out.print(",");}
+         }
+     }
+  }
+
+
+
+Task 3
+
+
+
+public class task3{
+  public static void main(String []args){
+    int initiate = 1;
+    int sum = 0;
+    while(initiate <= 600){
+      if(initiate%7==0 && initiate%9==0){
+      sum = sum+initiate;}
+    initiate++;}
+    System.out.println(sum);
+  }
+}
+
+
+
+Task 4
+
+
+
+public class task4{
+  public static void main(String []args){
+    int initiate = 1;
+    int sum = 0;
+    while(initiate <= 600){
+      if(initiate%7==0 || initiate%9==0){
+      sum = sum+initiate;}
+    initiate++;}
+    System.out.println(sum);
+  }
+}
+
+
+
+
+Task 5
+
+
+
+public class task5{
+  public static void main(String []args){
+    int start = 1;
+    int sum = 0;
+    while(start <= 600){
+      if((start%7==0 && start%9!=0)||(start%7!=0 && start%9==0)){
+      sum = sum+start;}
+    start++;}
+    System.out.println(sum);
+  }
+}
+
+
+
+Task 6
+
+
+
+public class task6{
+  public static void main(String []args){
+     int initiate = 1;
+     int n = 20;
+     int y = 0;
+     
+     while(initiate <= n){
+       if(initiate%2==0){
+           y = y - (int)Math.pow(initiate,2);
+       }
+       else{
+           y = y + (int)Math.pow(initiate,2);
+       }
+       initiate++;
+     }
+       System.out.print(y);     
+  }
+}
+
+
+
+Task 7
+
+
+
+public class task7{
+  public static void main(String []args){
+     int divisor = 1;
+     int given_number = 6;
+     int initiate = 0;
+     while(divisor <= given_number){
+       if(given_number%divisor==0){
+       System.out.println(divisor);
+       initiate++;}
+       divisor++;
+     }
+     System.out.println("Total Divisors: "+initiate);
+  }
+}
+
+
+
+Task 8
+
+
+
+public class task8{
+  public static void main(String []args){
+    int initiate = 1;
+     int n = 10;
+     int sum = 0;
+     int odd = 0;
+     
+     System.out.println ("The odd numbers are: ");
+     while(initiate<=n){
+        odd = 2*initiate-1; {
+        System.out.println(odd);
+        sum += odd;}
+       initiate++;
+     }
+     System.out.println("The sum of odd natural numbers up to 10 terms is: "+ sum);
+  }
+}
+
+
+
+Task 9
+
+
+
+public class task9{
+  public static void main(String []args){
+     int initiate = 1;
+     int sum = 0;
+     
+     while(initiate <= 10){
+       sum += initiate;
+       System.out.println("Current Number: " + initiate+",Sum: "+sum);
+       initiate++;
+   }
+  } 
+}
+
+
+
+Task 10
+
+
+
+public class task10{
+  public static void main(String []args){
+     int initiate = 0;
+     int n = 40;
+     while(initiate<=n){
+       if(initiate%5==0 && initiate%3!=0){
+       System.out.println(initiate);}
+     initiate++;
+     }
+  }
+}
+
+
+
+Task 11
+
+
+
+public class task11{
+  public static void main(String []args){
+     int num = 7546;
+     int counter = 0;
+     while(num>0){
+     num /= 10;
+     counter++;}
+     System.out.println("Digits in the number: "+counter);
+  }
+}
+
+
+
+Task 12
+
+
+
+public class task12{
+  public static void main(String []args){
+     int num = 32768;
+     int counter = 0;
+     int remainder;
+     while(num>0){
+     remainder= num % 10;
+     System.out.print(remainder);
+     num /= 10;
+     if(num>0){
+     System.out.print(",");
+     }
+     }
+  }
+}
+
+
+
+Task 13
+
+
+
+public class task13{
+  public static void main(String []args){
+     int num = 32768;
+     int counter = 0;
+     int divisor = 1;
+     
+     while(num/divisor >= 10){
+         divisor *= 10;
+     }
+     
+     while(divisor>0){
+     int digit = num/divisor;
+     System.out.print(digit);
+      num %=divisor;
+      divisor /=10;
+      if (divisor>0){
+     System.out.print(",");}
+     }
+   }
+  }  
+
+
+
+
+Task 14
+
+
+
+public class task14 {
+    public static void main(String[] args) {
+        int divisor = 1;
+        int given_number = 7;
+        int counter = 0;
+        while(divisor<=given_number){
+          if(given_number%divisor==0){
+              counter++;}
+             divisor++;}
+        if(counter==2){
+        System.out.println(given_number + " is a prime number.");}
+        else{
+          System.out.println(given_number + " is not a prime number.");
+        }
+    }
+}
+
+
+
+Task 15
+
+
+
+public class task15 {
+    public static void main(String[] args) {
+        int divisor = 1;
+        int given_number = 6;
+        int counter = 0;
+        int sum = 0;
+        
+        while(divisor<given_number){
+          if(given_number%divisor==0){
+              sum += divisor;}
+             divisor++;}
+        if(sum==given_number){
+        System.out.println(given_number + " is a perfect number.");}
+        else{
+          System.out.println(given_number + " is not a perfect number.");
+        }
+    }
+}
+
+
+
+------The End------

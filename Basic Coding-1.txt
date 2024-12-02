@@ -1,0 +1,290 @@
+/// Task 10
+
+Legal Identifiers:
+
+hungry
+2AB
+MOBILE
+$30
+Yes/No
+‘X’
+
+Illegal Identifiers:
+
+"Ans" (double quotes are not allowed)
+return (reserved keyword)
+student-id (- not allowed)
+A+3 (+ not allowed)
+312.2 (numbers)
+
+
+// Task 11
+
+
+public class Assignment11 {
+
+  public static void main(String[] args) {
+    int num1 = 22;
+    int num2 = 11; //this is from 2_2
+    System.out.println("num1: " + num1);
+    System.out.println("num2: " + num2);
+
+ //11_2
+    
+    int sum = num1 + num2;
+    System.out.println("Sum of num1 and num2: " + sum);
+
+ //11_3 (Product)
+    
+    int product = num1 * num2;
+    System.out.println("Product of num1 and num2: " + product);
+
+ //11_3 (Division)
+    
+    int division = num1 / num2;
+    System.out.println("Division of num1 and num2: " + division);
+    
+ //11_4
+    
+    double Tareq = 2.22;
+    double tareq = 1.11;
+    System.out.println("Tareq: " + Tareq);
+    System.out.println("tareq: " + tareq);
+    
+    double tSum = Tareq + tareq;
+    System.out.println("Sum of Tareq and tareq: " + tSum);
+    
+    double tProduct = Tareq * tareq;
+    System.out.println("Product of Tareq and tareq: " + tProduct);
+    
+    double tDivision = Tareq / tareq;
+    System.out.println("Division of Tareq and tareq: " + tDivision);
+    
+  //11_5
+    
+    double Athena = 5.99;
+    int talos = 3;
+    
+    double gSum = Athena + (double) talos;
+    System.out.println("Sum of Athena and talos: " + gSum);
+    
+    double gProduct = Athena * talos;
+    System.out.println("Product of Athena and talos: " + gProduct);
+    
+    double gDivision = Athena / talos;
+    System.out.println("Division of Athena and talos: " + gDivision);
+    
+  //11_6
+    
+    String str1 = "AMD";
+    String str2 = "Radeon";
+    
+   //Concatenation (For Strings, both just sit beside one another)
+    String strAdd = str1 + str2;
+      System.out.println("String concatenation: " + strAdd); 
+    
+    //What if
+    
+    int Model = 7700;
+    String intAdd = str1 + Model;
+    System.out.println("String + Integer concatenation: " + intAdd);
+    
+    //Vice-Versa
+    
+    String strintAdd = Model + str2;
+    System.out.println("Integer + String concatenation: " + strintAdd);
+  }
+}
+    
+
+
+// Task 12
+
+
+public class Assignment12 {
+  public static void main(String [] args) {
+  double radius = 4;
+  double area = Math.PI * radius * radius;
+    System.out.println("Area of the circle : " + area);
+  double circumference = 2 * Math.PI * radius;
+    System.out.println("Circumference of the circle : " + circumference);
+  }
+}
+
+
+// Task 13
+
+
+public class Assignment13 {
+  public static void main(String[] args) {
+    int num = 4060;
+    int last2digits = num % 100;
+    System.out.println("Last two digits are: " + last2digits);
+  }
+}
+
+
+// Task 14
+
+
+public class Assignment14 {
+  public static void main(String[] args) {
+    int inches = 69;
+    double itm = 0.0254;
+    double meters = inches * itm;
+    System.out.println(inches + " inches is " + meters + " meters");
+  }
+}
+
+
+// Task 15a
+
+
+public class Assignment15a {
+  public static void main (String [] args) {
+    int A = 7;
+    int B = 10;
+    int C = A;
+    A = B; 
+    B = C;
+    System.out.println ("Swap done");
+    System.out.println("A: " + A);
+    System.out.println("B: "+ B);
+  }
+}
+
+
+
+// Task 15b
+
+
+public class Assignment15b {
+    public static void main(String[] args) {
+        int A = 7;
+        int B = 10;
+            
+            A = A+B; //7+10 =17
+            B = A-B;//17-10 = 7
+            A = A-B; //17-7 = 10
+            
+System.out.println ("Swap done");
+    System.out.println("A: " + A);
+    System.out.println("B: "+ B);
+  }
+}
+
+
+
+// Task 16
+
+
+public class Assignment16 {
+  public static void main(String [] args) {
+    int minutes = 69696969;
+   
+//conversion
+    int MiY = 60 * 24 * 365;
+    int MiD = 60 * 24;
+    
+ //Calculate
+    int years = minutes / MiY;
+    int minutesleft = minutes % MiY;
+    int days = minutesleft / MiD;
+ System.out.println(minutes + " is approximately " + years + " years and " + days + " days");
+                    }
+}
+
+
+// Task 17
+
+
+
+public class Assignment17 {
+  public static void main(String[] args) {
+    int a = 2;
+    int b = 5;
+    int c = 8;
+    int d = ((2*b * (c-a)/3) + 7);
+    
+    System.out.println("d : " + d);
+  }
+}
+
+
+
+// Task 18
+
+
+import java.util.Scanner;
+public class Assignment18 {
+
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+      
+    int studentID = sc.nextInt();
+   
+    int lastTwoDigits = studentID % 100;
+    int firstDigit = lastTwoDigits / 10;
+    int secondDigit = lastTwoDigits % 10;
+    System.out.println(secondDigit);
+    System.out.println(firstDigit);
+  }
+}
+
+
+
+// Task 19
+
+
+public class Assignment19 {
+  public static void main(String[] args) {
+    int a = 8;
+    int b = 3;
+    
+   //Hypotenuse formula
+   double S = Math.sqrt(a * a + b * b);
+   
+   //Area formula
+    double area = ((3 * Math.sqrt(3)/2) * S * S);
+    System.out.println ( "Area of the Hexagon = " + area);
+    
+    //Circumference formula
+     double P = 6 * S;
+     System.out.println ( "Circumference of the Hexagon = " + P);
+  }
+}
+
+
+
+// Task 20
+
+
+public class Assignment20 {
+  public static void main(String[] args) {
+    double a = 4.5;
+    double b = 9.5;
+    
+  //Hypotenuse
+    
+    double c = Math.sqrt(a*a  + b*b);
+
+  //Calculation
+  //Angle A
+    
+    double sinA = a / c;
+    double cosA = b / c;
+    
+  // Angle B
+    
+    double sinB = b / c;
+    double cosB = a / c;
+
+  System.out.printf("Sin(A) = %.2f, Cos(A) = %.2f\n", sinA, cosA);
+  System.out.printf("Sin(B) = %.2f, Cos(B) = %.2f\n", sinB, cosB);
+  }
+}
+
+
+
+
+-------The End--------
