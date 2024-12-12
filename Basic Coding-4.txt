@@ -1,0 +1,352 @@
+//task 1
+
+
+import java.util.Scanner;
+
+public class task1 {
+public static void main(String[] args) {
+       
+        System.out.print("Number of Inputs: ");
+        Scanner glass = new Scanner(System.in);
+        int n = glass.nextInt();
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        int addition = 0;
+        int counter = 0;
+        int i = 0;
+        while (i < n) {
+           
+            int Num = glass.nextInt();
+
+            if (Num > 0 && Num % 2 == 0) {
+   
+                if (Num > max) {
+                    max = Num;
+                }
+                if (Num < min) {
+                    min = Num;
+                }
+                addition += Num;
+                counter++;
+            }
+
+            i++;
+        }
+
+
+        if (counter > 0) {
+            double average = (double) addition / counter;
+            System.out.println("Max: " + max);
+            System.out.println("Min: " + min);
+            System.out.println("Average: " + average);
+        }
+        glass.close();
+    }
+}
+
+
+
+
+//task 2
+
+
+import java.util.Scanner;
+
+public class task2 {
+    public static void main(String[] args) {
+        Scanner glass = new Scanner(System.in);
+        
+        System.out.print("How many integers to check?: ");
+        int count = glass.nextInt();
+        
+        for (int i = 0; i < count; i++) {
+            System.out.print("Enter an integer: ");
+            int Numb = glass.nextInt();
+            if (Numb < 0) {
+                break;
+            }
+            System.out.println(Numb + "^2=" + (Numb * Numb));
+        }
+        
+        glass.close();
+    }
+}
+
+
+
+//task 3
+
+import java.util.Scanner;
+
+public class task3 {
+    public static void main(String[] args) {
+        Scanner glass = new Scanner(System.in);
+
+        System.out.print("How many inputs?: ");
+        int qntt = glass.nextInt();
+
+        int nN_count = 0;
+        int n_count = 0;
+
+        for (int i = 0; i < qntt; i++) {
+            System.out.print("Enter input " + (i + 1) + ": ");
+            int number = glass.nextInt();
+
+            if (number >= 0) {
+                nN_count++;
+            } else {
+                n_count++;
+            }
+        }
+
+        System.out.println(nN_count + " non-negative numbers");
+        System.out.println(n_count + " negative numbers");
+
+        
+    }
+}
+
+
+//task 4
+
+
+import java.util.Scanner;
+
+public class task4 {
+    public static void main(String[] args) {
+        Scanner glass = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int N = glass.nextInt();
+        int counter = 0;
+        int Numb = 2;
+
+        while (counter < N) {
+            boolean isPrime = true;
+            for (int i = 2; i <= Math.sqrt(Numb); i++) {
+                if (Numb % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                System.out.print(Numb + " ");
+                counter++;
+            }
+            Numb++;
+        }
+        glass.close();
+    }
+}
+
+
+
+//task 5
+
+
+import java.util.Scanner;
+
+public class task5 {
+    public static void main(String[] args) {
+        Scanner Jarvis = new Scanner(System.in);
+        System.out.print("Input N: ");
+        int N = Jarvis.nextInt();
+        int y = 0;
+
+        for (int i = 1; i <= N; i++) {
+            int sum = 0;
+            for (int j = 1; j <= i; j++) {
+                sum += j;
+            }
+            y -= sum;
+        }
+
+        System.out.println("Value of y: " + y);
+    }
+}
+
+
+
+//task 6
+
+
+import java.util.Scanner;
+
+public class task6 {
+    public static void main(String[] args) {
+        Scanner Jarvis = new Scanner(System.in);
+        int num;
+
+        while (true) {
+            System.out.print("Enter Number: ");
+            num = Jarvis.nextInt();
+
+            if (num % 2 != 0) {
+                break;
+            }
+
+            int dc = 0;
+            for (int i = 1; i <= num; i++) {
+                if (num % i == 0) {
+                    dc++;
+                }
+            }
+
+            System.out.println(num + " has " + dc + " divisors");
+        }        
+    }
+}
+
+
+
+//task 7
+
+
+import java.util.Scanner;
+
+public class task7 {
+    public static void main(String[] args) {
+        Scanner Jarvis = new Scanner(System.in);
+        int N = Jarvis.nextInt();
+
+        for (int i = 0; i < N; i++) {
+            int X = Jarvis.nextInt();
+   int Y = Jarvis.nextInt();
+          int sum = 0;
+            int C = 0;
+
+            for (int j = X; C < Y; j++) {
+                if (j % 2 != 0) {
+                    sum += j;
+                    C++;
+                }
+            }
+            System.out.println(sum);
+        }
+    }
+}
+
+
+
+//task 8
+
+
+import java.util.Scanner;
+
+public class task8 {
+    public static void main(String[] args) {
+        Scanner Jarvis = new Scanner(System.in);
+        
+        System.out.print("Length input: ");
+        int L = Jarvis.nextInt();
+        
+        System.out.print("Width input: ");
+        int W = Jarvis.nextInt();
+        
+        for (int i = 1; i <= W; i++) {
+            for (int j = 1; j <= L; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+        
+    }
+}
+
+
+
+//task 9
+
+
+import java.util.Scanner;
+
+public class task9 {
+    public static void main(String[] args) {
+        Scanner Jarvis = new Scanner(System.in);
+        System.out.print("Enter the height of the right-justified right triangle: ");
+        int H = Jarvis.nextInt();
+
+        for (int i = 1; i <= H; i++) {
+            for (int j = 1; j <= H - i; j++) {
+                System.out.print("   ");
+            }
+            for (int k = 1; k <= i; k++) {
+                System.out.print(" " + k);
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+//task 10
+
+
+import java.util.Scanner;
+
+public class task10 {
+    public static void main(String[] args) {
+        Scanner Jarvis = new Scanner(System.in);
+        System.out.print("Input height of isosceles triangle: ");
+        int H = Jarvis.nextInt();
+
+        for (int i = 1; i <= H; i++) {
+            for (int j = 1; j <= H - i; j++) {
+                System.out.print("   ");
+            }
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                System.out.print(k + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+//task 11
+
+
+import java.util.Scanner;
+
+public class task11 {
+    public static void main(String[] args) {
+        Scanner Jarvis = new Scanner(System.in);
+        
+        System.out.print("Enter beginning number: ");
+        int begin = Jarvis.nextInt();
+          System.out.print("Enter ending number: ");
+        int end = Jarvis.nextInt();
+        
+        System.out.println("Armstrong numbers:");
+        
+   for (int num = begin; num <= end; num++) {
+            int sum = 0;
+        int Z = num;
+            int D = 0;
+
+            for (int n = Z; n != 0; n /= 10) {
+                D++;
+            }
+            
+            for (int n = Z; n != 0; n /= 10) {
+                int d = n % 10;
+                int P = 1;
+                for (int i = 0; i < D; i++) {
+                    P *= d;
+                }
+                sum += P;
+            }
+
+            if (sum == num) {
+                System.out.println(num);
+            }
+        }
+
+    }
+}
+
+
+
+-----The End-----
+
+
