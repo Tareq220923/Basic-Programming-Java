@@ -1,0 +1,268 @@
+//task 1
+
+
+import java.util.Scanner;
+public class task1 {
+    public static void main(String[] args) {
+        Scanner siri = new Scanner(System.in);
+        String alexa = siri.nextLine();
+        String sol = "";
+        for (int i = 0; i < alexa.length(); i++) {
+            char c = alexa.charAt(i);
+            if (c >= 'a' && c <= 'z') {
+                sol += (char) (c - 32);
+            } else {
+                sol += c;
+            }
+        }
+        System.out.println(sol);
+    }
+}
+
+
+
+//task 2
+
+
+import java.util.Scanner;
+public class task2 {
+    public static void main(String[] args) {
+        Scanner siri = new Scanner(System.in);
+        String alexa = siri.nextLine();
+        String store = "";
+        for (int i = alexa.length() - 1; i >= 0; i--) {
+            store += alexa.charAt(i);
+        }
+        if (alexa.equals(store)) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+    }
+}
+
+
+
+//task 3
+
+
+import java.util.Scanner;
+public class task3 {
+    public static void main(String[] args) {
+        Scanner siri = new Scanner(System.in);
+        String alexa = siri.nextLine();
+        char random = siri.next().charAt(0);
+        String sol = "";
+        for (int i = 0; i < alexa.length(); i++) {
+            if (alexa.charAt(i) != random) {
+                sol += alexa.charAt(i);
+            } else {
+                System.out.println(sol);
+                sol = "";
+            }
+        }
+        if (sol.length() > 0) {
+            System.out.println(sol);
+        }
+    }
+}
+
+
+
+//task 4
+
+
+
+import java.util.Scanner;
+public class task4 {
+    public static void main(String[] args) {
+        Scanner siri = new Scanner(System.in);
+        String alexa = siri.nextLine();
+        String ass = "";
+        for (int i = alexa.length() - 1; i >= 0; i--) {
+            ass += alexa.charAt(i);
+        }
+        System.out.println(ass);
+    }
+}
+
+
+
+//task 5
+
+
+
+import java.util.Scanner;
+public class task5 {
+    public static void main(String[] args) {
+        Scanner siri = new Scanner(System.in);
+        String alexa = siri.nextLine();
+        int V = 0;
+        int C = 0;
+        for (int i = 0; i < alexa.length(); i++) {
+            char c = alexa.charAt(i);
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                V++;
+            } else {
+                C++;
+            }
+        }
+        if (V % 3 == 0 && C % 5 == 0 && V > 0 && C > 0) {
+            System.out.println("Aaarr! Me Plunder!!");
+        } else {
+            System.out.println("Blimey! No Plunder!!");
+        }
+    }
+}
+
+
+
+//task 6
+
+
+
+import java.util.Scanner;
+public class task6 {
+    public static void main(String[] args) {
+        Scanner siri = new Scanner(System.in);
+        String alexa = siri.nextLine();
+        String sol = "";
+        String str = "";
+        for (int i = 0; i < alexa.length(); i++) {
+            if (alexa.charAt(i) != ' ') {
+                str += alexa.charAt(i);
+            } else {
+                sol = str + " " + sol;
+                str = "";
+            }
+        }
+        if (str.length() > 0) {
+            sol = str + " " + sol;
+        }
+        System.out.println(sol);
+    }
+}
+
+
+
+//task 7
+
+
+
+import java.util.Scanner;
+public class task7 {
+    public static void main(String[] args) {
+        Scanner siri = new Scanner(System.in);
+        String alexa = siri.nextLine();
+        String jarvis = siri.nextLine();
+        String sol = "";
+        for (int i = 0; i < alexa.length(); i++) {
+            boolean flag = false;
+            for (int j = 0; j < jarvis.length(); j++) {
+                if (alexa.charAt(i) == jarvis.charAt(j)) {
+                    flag = true;
+                }
+            }
+            if (!flag) {
+                sol += alexa.charAt(i);
+            }
+        }
+        for (int i = 0; i < jarvis.length(); i++) {
+            boolean flag = false;
+            for (int j = 0; j < alexa.length(); j++) {
+                if (jarvis.charAt(i) == alexa.charAt(j)) {
+                    flag = true;
+                }
+            }
+            if (!flag) {
+                sol += jarvis.charAt(i);
+            }
+        }
+        for (int i = 0; i < sol.length(); i++) {
+            System.out.print((char) (sol.charAt(i) - 32));
+        }
+    }
+}
+
+
+
+//task 8
+
+
+
+import java.util.Scanner;
+
+public class task8 {
+    public static void main(String[] args) {
+        Scanner siri = new Scanner(System.in);
+        String alexa = siri.nextLine();
+        StringBuilder sol = new StringBuilder();
+        boolean flag = false;
+
+        for (int i = 0; i < alexa.length(); i++) {
+            char rdm = alexa.charAt(i);
+            if (rdm != ' ') {
+                if (flag) {
+                    if (rdm >= 'a' && rdm <= 'z') {
+                        sol.append((char) (rdm - 32));
+                    } else {
+                        sol.append(rdm);
+                    }
+                } else {
+                    if (rdm >= 'A' && rdm <= 'Z') {
+                        sol.append((char) (rdm + 32));
+                    } else {
+                        sol.append(rdm);
+                    }
+                }
+                flag = !flag;
+            } else {
+                sol.append(" ");
+            }
+        }
+        System.out.println(sol.toString());
+    }
+}
+
+
+
+
+//task 9
+
+
+
+import java.util.Scanner;
+
+public class task9 {
+    public static void main(String[] args) {
+        Scanner siri = new Scanner(System.in);
+        String alexa = siri.nextLine();
+        boolean length;
+        if (alexa.length() >= 8) {
+            length = true;
+        } else {
+            length = false;
+        }
+        boolean up = false;
+        boolean low = false;
+        boolean dig = false;
+        boolean spcl = false;
+        for (int i = 0; i < alexa.length(); i++) {
+            char c = alexa.charAt(i);
+            if (c >= 'A' && c <= 'Z') {
+                up = true;
+            } else if (c >= 'a' && c <= 'z') {
+                low = true;
+            } else if (c >= '0' && c <= '9') {
+                dig = true;
+            } else {
+                spcl = true;
+            }
+        }
+        if (length && up && low && dig && spcl) {
+            System.out.println("True");
+        } else {
+            System.out.println("False");
+        }
+    }
+}
