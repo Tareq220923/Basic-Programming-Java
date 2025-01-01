@@ -1,0 +1,435 @@
+//task 1
+
+
+
+import java.util.Scanner;
+public class task1{
+  public static void main (String args[]){
+  Scanner doc = new Scanner (System.in);
+  int tinput = doc.nextInt();
+  int [] Athena = new int[tinput];
+  
+  for (int i =0 ; i< tinput; i++)
+  { 
+    System.out.print ("Enter a number: ");
+    Athena[i] = doc.nextInt();
+    
+  }
+   for (int i =0 ; i< tinput; i++)
+  { 
+     System.out.print ( i +": "+Athena[i]);
+      System.out.println ();
+  }
+  
+  int [] Namira = new int [tinput+1];
+  System.out.print ("Enter another number: ");
+  
+  int tinput2 = doc.nextInt();
+   for (int i =0 ; i< tinput; i++)
+  { 
+    Namira[i] = Athena[i];
+  }
+   Namira[tinput]= tinput2;
+  
+   System.out.println ("After resizing the array:");
+    for (int i =0 ; i< tinput+1; i++)
+  { 
+     System.out.print (Namira[i] + " ");
+  }
+   
+  }
+}
+
+
+
+//task 2
+
+
+
+import java.util.Scanner;
+public class task2{
+  public static void main (String args[]){
+  Scanner doc = new Scanner (System.in);
+  int [] Athena = {9,-5 ,7,9 ,-5,5,7};
+  int tinput = Athena.length;
+  int [] Namira = new int [tinput];
+   System.out.println("Before removing duplicates:");
+  for (int i = 0; i<tinput ; i++){
+    System.out.print(Athena[i] +" ");
+  }
+  for (int i = 0; i<tinput ; i++){
+   Namira[i] = Athena[i];
+      for (int j = 0 ; j<i; j++){
+        if (Namira[j]== Namira[i]){Namira [i]= 0;
+        break;}
+      }
+    }
+ System.out.println();
+ System.out.println("After replacing duplicates with 0:");
+    for (int i = 0; i<tinput ; i++){
+ System.out.print(Namira[i] +" ");
+  }
+  }
+  }
+
+
+
+//task 3A
+
+
+
+import java.util.Scanner;
+
+public class task3a {
+   public static void main(String[] args) {
+   Scanner doc = new Scanner(System.in);
+   System.out.print("Enter the length of the array: ");
+    int tinput = doc.nextInt();
+     int[] Athena = new int[tinput];
+     int[] Namira = new int[tinput];
+
+        for (int i = 0; i < tinput; i++) {
+            System.out.print("Enter a number: ");
+            Athena[i] = doc.nextInt();
+        }
+
+        for (int i = 0; i < tinput; i++) {
+            Namira[i] = Athena[tinput - 1 - i];
+        }
+
+        System.out.println("Reversed using a new array: ");
+        for (int i = 0; i < tinput; i++) {
+            System.out.print(Namira[i] + " ");
+        }
+        doc.close();
+    }
+}
+
+
+
+
+//task 3B
+
+
+
+import java.util.Scanner;
+public class task3b{
+  public static void main (String args[]){
+  Scanner doc = new Scanner (System.in);
+  System.out.print("Enter the length of the array: ");
+  int tinput = doc.nextInt();
+  int [] Athena = new int[tinput];
+  for (int i = 0; i<tinput ; i++){
+    System.out.print("Enter a number: ");
+    Athena [i]= doc.nextInt();
+  }
+ System.out.println("Reversed using the original array: ");
+    for (int i = tinput-1; i>=0 ; i--){
+ System.out.print(Athena[i] +" ");
+  }
+  }
+  }
+
+
+
+//task 4
+
+
+
+import java.util.Scanner;
+public class task4{
+  public static void main (String args[]){
+  Scanner doc = new Scanner (System.in);
+  System.out.print("N = ");
+  int tinput = doc.nextInt();
+  int [] Athena = new int[tinput];
+  for (int i = 0; i<tinput ; i++){
+    Athena [i]= doc.nextInt();
+  }
+ System.out.println("Original array: ");
+    for (int i = 0; i<tinput ; i++){
+ System.out.print(Athena[i] +" ");
+  }
+     System.out.println();
+     
+     for (int i = 0; i<tinput ; i++){
+       if (Athena[i]<=0){Athena[i]=0;}
+       else{Athena[i]=1;}
+  }
+      System.out.println("After modifying: ");
+     for (int i = 0; i<tinput ; i++){
+ System.out.print(Athena[i] +" ");
+  }
+  }
+  }
+
+
+
+//task 5
+
+
+
+import java.util.Scanner;
+public class task5{
+  public static void main (String args[]){
+  Scanner doc = new Scanner (System.in);
+  int tinput = doc.nextInt();
+  int [] Athena = new int[tinput];
+  Boolean flag = true;
+  int strt = 0;
+  for (int i = 0; i<tinput ; i++){
+   System.out.print("Enter a number; ");
+   Athena [i]= doc.nextInt();
+  }
+  int tinput2 = doc.nextInt();
+     
+     for (int i = 0; i<tinput ; i++){
+       if (Athena[i]==tinput2){flag = false;
+         strt= i;
+       break;}
+  }
+     if (!flag) {System.out.println(tinput2+" is at index "+strt);}
+  else {System.out.println("Element not found");}
+  }
+}
+
+
+
+//task 6
+
+
+
+import java.util.Scanner;
+public class task6 {
+  public static void main (String args[]){
+  Scanner doc = new Scanner (System.in);
+     System.out.print("Enter the length of the array: ");
+  int tinput = doc.nextInt();
+  double [] Athena = new double[tinput];
+  for (int i = 0; i<tinput ; i++){
+   System.out.print("Enter a number: ");
+   Athena [i]= doc.nextDouble();
+  }
+  double TMaximum =0;
+  double TMinimum = 0;
+  int tmax = 0;
+  int tmin = 0;
+  for (int i = 0; i<tinput ; i++){
+    if (i==0){TMaximum = Athena[i]; tmax = i;  }
+    else {
+      if (Athena[i]> TMaximum){TMaximum = Athena[i]; tmax = i; }
+  }
+  }
+System.out.println("Maximum element " + TMaximum + " found at index "+ tmax);
+  for (int i = 0; i<tinput ; i++){
+    if (i==0){TMinimum = Athena[i]; tmin = i;}
+    else {
+      if (Athena[i]<TMinimum){TMinimum = Athena [i] ; tmin =i; }
+    }
+  }
+  System.out.println("Minimum element "+ TMinimum + " found at index " + tmin);
+  double Total =0;
+     for (int i = 0; i<tinput ; i++){
+     Total = Total + Athena[i];  
+     }
+      System.out.println("Summation: " + Total);
+      
+  double Avrg = Total / tinput ;
+       System.out.printf("Average: %.2f" ,Avrg);
+       System.out.println();
+     
+  }
+}
+
+
+
+
+//task 7
+
+
+
+import java.util.Scanner;
+public class task7{
+  public static void main (String args[]){
+  
+    int [] Athena = {-5,10,-7,-5};
+    int tinput = Athena.length;
+    int fingers = 0;
+    System.out.println ("Input array:");
+      
+  for (int i = 0; i<tinput ; i++){
+      System.out.print(Athena [i] + " ");
+  }
+   System.out.println ();
+   
+  for (int i = 0; i<tinput ; i++){
+    Boolean flag = true;
+      for (int j = 0 ; j < i ; j++) {  
+        if (Athena[j]==Athena[i]){
+         flag = false;
+         break;
+      }
+      }
+        if (flag){
+         fingers++;
+        }
+      }
+ int [] Namira  = new int[fingers];
+ int more_fingers = 0;
+   
+  for (int i = 0; i<tinput ; i++){
+    Boolean flag = true;
+      for (int j = 0 ; j < i ; j++) {  
+        if (Athena[j]==Athena[i]){
+         flag = false;
+         break;
+      }
+      }
+        if (flag){
+         Namira[more_fingers] = Athena[i];
+         more_fingers++;
+        }
+      }
+  
+   System.out.println ("New array:");
+  for (int i =0 ; i<fingers ;i++)
+  {  System.out.print(Namira [i] + " ");
+  }
+  }  
+  }
+
+
+
+
+//task 8
+
+
+
+import java.util.Scanner;
+public class task8{
+  public static void main (String args[]){
+  System.out.print("Please enter the length of array 1: ");
+    Scanner doc = new Scanner(System.in);
+   int tinput1 = doc.nextInt();
+   int [] Athena = new int [tinput1];
+    System.out.println ("Please enter the elements of the arr1 :");
+   for (int i =0; i<tinput1 ; i++){
+   Athena[i]= doc.nextInt(); 
+   }
+  System.out.print("Please enter the length of array 2: ");
+  int tinput2 = doc.nextInt();
+    int [] Namira = new int [tinput2];
+    System.out.println ("Please enter the elements of the arr2 :");
+   for (int i =0; i<tinput2 ; i++){
+   Namira[i]= doc.nextInt(); 
+   }
+   
+ int fingers = 0;
+   for (int i = 0; i<tinput2; i++){
+    boolean flag = false;
+     for (int j = 0; j < tinput1; j++){
+       if (Namira[i]==Athena[j]){
+       flag = true;
+       break;
+       }
+     }
+       if (flag){fingers = fingers + 1 ; }
+     }
+   
+   if (fingers == tinput2){System.out.println ("Array 2 is a subset of Array 1.");}
+   else {System.out.println ("Array 2 is not a subset of Array 1"); } 
+  }
+  }  
+
+
+
+//task 9
+
+
+
+import java.util.Scanner;
+
+public class task9 {
+    public static void main(String[] args) {
+        Scanner Doc = new Scanner(System.in);
+        
+        System.out.print("N = ");
+        int Tinput = Doc.nextInt();
+        
+        int[] Athena = new int[Tinput];
+        
+        // Collecting user input
+        for (int i = 0; i < Tinput; i++) {
+            System.out.print("Enter a number: ");
+            Athena[i] = Doc.nextInt();
+        }
+        
+        // Displaying the original Athena
+        System.out.println("Original Array: ");
+        for (int i = 0; i < Tinput; i++) {
+            System.out.print(Athena[i] + " ");
+        }
+        System.out.println();
+        
+        // Implementing Selection Sort
+        for (int i = 0; i < Tinput - 1; i++) {
+            int maxIndex = i;
+            for (int j = i + 1; j < Tinput; j++) {
+                if (Athena[j] > Athena[maxIndex]) {
+                    maxIndex = j;
+                }
+            }
+            // Swapping elements
+            int Z = Athena[maxIndex];
+            Athena[maxIndex] = Athena[i];
+            Athena[i] = Z;
+        }
+        
+        // Displaying the sorted Athena
+        System.out.println("Sorted Array: ");
+        for (int i = 0; i < Tinput; i++) {
+            System.out.print(Athena[i] + " ");
+        }
+    }
+}
+
+
+
+
+//task 10
+
+
+
+public class task10 {
+    public static void main(String[] args) {
+        int[] marks = {100, 47, 85, 94, 5, 50};
+        String[] names = {"Henry", "Mari", "Herry", "Jack", "Lily", "Oliver"};
+        
+        // Bubble Sort Algorithm
+        for (int i = 0; i < marks.length - 1; i++) {
+            for (int j = 0; j < marks.length - 1 - i; j++) {
+                if (marks[j] > marks[j + 1]) {
+                    // Swap marks
+                    int tempMark = marks[j];
+                    marks[j] = marks[j + 1];
+                    marks[j + 1] = tempMark;
+
+                    // Swap names
+                    String tempName = names[j];
+                    names[j] = names[j + 1];
+                    names[j + 1] = tempName;
+                }
+            }
+        }
+
+        // Output the sorted arrays
+        System.out.print("Sorted Array: \tinput");
+        for (int mark : marks) {
+            System.out.print(mark + " ");
+        }
+        System.out.println();
+        for (String name : names) {
+            System.out.print(name + " ");
+        }
+    }
+}
