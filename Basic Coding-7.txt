@@ -1,0 +1,403 @@
+//task 1
+
+
+import java.util.Scanner;
+
+public class task1 {
+
+    public static void evenChecker(int value) {
+        if (isEven(value)) {
+            System.out.println("Even!!");
+        } else {
+            System.out.println("Odd!!");
+        }
+    }
+
+    public static boolean isEven(int value) {
+        return value % 2 == 0;
+    }
+
+    public static boolean isPos(int value) {
+        return value > 0;
+    }
+
+    public static void sequence(int l) {
+        if (isPos(l)) {
+            for (int strt = 0; strt <= l; strt++) {
+                if (isEven(strt)) {
+                    System.out.print(strt + " ");
+                }
+            }
+        } else {
+            for (int strt = l; strt < 0; strt++) {
+                if (!isEven(strt)) {
+                    System.out.print(strt + " ");
+                }
+            }
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Scanner doc = new Scanner(System.in);
+        
+        System.out.print("Enter a value to check if it is even or odd: ");
+        int number1 = doc.nextInt();
+        evenChecker(number1);
+        
+        System.out.print("Enter another value to check if it is even or odd: ");
+        int number2 = doc.nextInt();
+        evenChecker(number2);
+        
+        System.out.print("Enter a value to check if it is even: ");
+        int checkEven = doc.nextInt();
+        boolean rslt = isEven(checkEven);
+        System.out.println(rslt);
+        
+        System.out.print("Enter a value to check if it is positive: ");
+        int checkPos = doc.nextInt();
+        rslt = isPos(checkPos);
+        System.out.println(rslt);
+        
+        System.out.print("Enter a positive value for the sequence: ");
+        int seqPos = doc.nextInt();
+        sequence(seqPos);
+        
+        System.out.print("Enter a negative value for the sequence: ");
+        int seqNeg = doc.nextInt();
+        sequence(seqNeg);
+        
+        doc.close();
+    }
+}
+
+
+
+
+//task 2
+
+
+import java.util.Scanner;
+
+public class task2 {
+
+    public static void main(String[] args) {
+        Scanner doc = new Scanner(System.in);
+        
+        System.out.print("Enter diameter: ");
+        int diameter = doc.nextInt();
+        System.out.print("Enter shape (circle/sphere): ");
+        String shape = doc.next();
+        
+        findSpace(diameter, shape);
+        
+        doc.close();
+    }
+
+    public static double circleArea(int radius) {
+        return Math.PI * Math.pow(radius, 2);
+    }
+
+    public static double sphereVolume(int radius) {
+        return (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
+    }
+
+    public static void findSpace(int diameter, String shape) {
+        int radius = diameter / 2;
+        if (shape.equalsIgnoreCase("circle")) {
+            double area = circleArea(radius);
+            System.out.println(area);
+        } else if (shape.equalsIgnoreCase("sphere")) {
+            double volume = sphereVolume(radius);
+            System.out.println(volume);
+        } else {
+            System.out.println("Wrong Parameter");
+        }
+    }
+}
+
+
+
+//task 3
+
+
+import java.util.Scanner;
+
+public class task3 {
+
+    public static void main(String[] args) {
+        Scanner doc = new Scanner(System.in);
+        System.out.print("Enter three sides of a triangle: ");
+        int a = doc.nextInt();
+        int b = doc.nextInt();
+        int c = doc.nextInt();
+        
+        triArea(a, b, c);
+    }
+
+    public static boolean isTriangle(int a, int b, int c) {
+        return (a + b > c) && (a + c > b) && (b + c > a);
+    }
+
+    public static void triArea(int a, int b, int c) {
+        if (isTriangle(a, b, c)) {
+            double s = (a + b + c) / 2.0;
+            double area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+            System.out.println(area);
+        } else {
+            System.out.println("Can't form triangle");
+        }
+    }
+}
+
+
+
+//task 4
+
+
+import java.util.Scanner;
+
+public class task4 {
+
+    public static void main(String[] args) {
+        Scanner doc = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int inpt = doc.nextInt();
+        int rslt = special_sum(inpt);
+        System.out.println(rslt);
+    }
+
+    public static boolean isPrime(int value) {
+        if (value <= 1) return false;
+        for (int strt = 2; strt <= Math.sqrt(value); strt++) {
+            if (value % strt == 0) return false;
+        }
+        return true;
+    }
+
+    public static boolean isPerfect(int value) {
+        int sum = 0;
+        for (int strt = 1; strt < value; strt++) {
+            if (value % strt == 0) {
+                sum += strt;
+            }
+        }
+        return sum == value;
+    }
+
+    public static int special_sum(int l) {
+        int sum = 0;
+        for (int strt = 1; strt <= l; strt++) {
+            if (isPrime(strt) || isPerfect(strt)) {
+                sum += strt;
+            }
+        }
+        return sum;
+    }
+}
+
+
+
+//task 5
+
+
+import java.util.Scanner;
+
+public class task5 {
+
+    public static void main(String[] args) {
+        Scanner doc = new Scanner(System.in);
+        System.out.print("Enter a value for the diamond: ");
+        int value = doc.nextInt();
+        showDiamond(value);
+        doc.close();
+    }
+
+    public static void showDots(int count) {
+        for (int strt = 0; strt < count; strt++) {
+            System.out.print(".");
+        }
+    }
+
+    public static void show_palindrome(int value) {
+        for (int strt = 1; strt <= value; strt++) {
+            System.out.print(strt);
+        }
+        for (int strt = value - 1; strt >= 1; strt--) {
+            System.out.print(strt);
+        }
+    }
+
+    public static void showDiamond(int l) {
+        int spaces = l - 1;
+
+        for (int strt = 1; strt <= l; strt++) {
+            showDots(spaces);
+            show_palindrome(strt);
+            showDots(spaces);
+            System.out.println();
+            spaces--;
+        }
+
+        spaces = 1;
+
+        for (int strt = l - 1; strt >= 1; strt--) {
+            showDots(spaces);
+            show_palindrome(strt);
+            showDots(spaces);
+            System.out.println();
+            spaces++;
+        }
+    }
+}
+
+
+
+//task 6
+
+
+import java.util.Scanner;
+
+public class task6 {
+
+    public static void main(String[] args) {
+        calcYearlyTax();
+    }
+
+    public static double calcTax(int age, double salary) {
+        if (age < 18) {
+            return 0.0;
+        } else if (salary < 10000) {
+            return 0.0;
+        } else if (salary >= 10000 && salary <= 20000) {
+            return salary * 0.07;
+        } else {
+            return salary * 0.14;
+        }
+    }
+
+    public static void calcYearlyTax() {
+        Scanner doc = new Scanner(System.in);
+        System.out.print("Enter your age: ");
+        int age = doc.nextInt();
+        double totalTax = 0.0;
+
+        for (int month = 1; month <= 12; month++) {
+            System.out.print("Enter income for month " + month + ": ");
+            double income = doc.nextDouble();
+            double tax = calcTax(age, income);
+            System.out.println("Month" + month + " tax: " + tax);
+            totalTax += tax;
+        }
+
+        System.out.println("Total Yearly Tax: " + totalTax);
+        doc.close();
+    }
+}
+
+
+
+//task 7
+
+
+import java.util.Scanner;
+
+public class task7 {
+
+    public static void main(String[] args) {
+        Scanner doc = new Scanner(System.in);
+
+        System.out.print("Enter a value for oneToN: ");
+        int N1 = doc.nextInt();
+        oneToN(1, N1);
+        System.out.println();
+
+        System.out.print("Enter a value for nToOne: ");
+        int N2 = doc.nextInt();
+        nToOne(N2, 1);
+        System.out.println();
+
+        System.out.print("Enter a value for recursiveSum: ");
+        int N3 = doc.nextInt();
+        int sum = recursiveSum(1, N3);
+        System.out.println(sum);
+    }
+
+    public static void oneToN(int current, int N) {
+        if (current > N) {
+            return;
+        }
+        System.out.print(current + " ");
+        oneToN(current + 1, N);
+    }
+
+    public static void nToOne(int current, int N) {
+        if (current > N) {
+            return;
+        }
+        nToOne(current + 1, N);
+        System.out.print(N - current + 1 + " ");
+    }
+
+    public static int recursiveSum(int current, int N) {
+        if (current > N) {
+            return 0;
+        }
+        return current + recursiveSum(current + 1, N);
+    }
+}
+
+
+
+//task 8
+
+
+import java.util.Scanner;
+
+public class task8 {
+
+    public static void main(String[] args) {
+        Scanner doc = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int l = doc.nextInt();
+        reverseDigits(l);
+    }
+
+    public static void reverseDigits(int l) {
+        if (l < 10) {
+            System.out.println(l);
+        } else {
+            System.out.println(l % 10);
+            reverseDigits(l / 10);
+        }
+    }
+}
+
+
+
+//task 9
+
+
+import java.util.Scanner;
+
+public class task9 {
+
+    public static void main(String[] args) {
+        Scanner doc = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int l = doc.nextInt();
+        int x = sumDigits(l);
+        System.out.println(x);
+    }
+
+    public static int sumDigits(int l) {
+        if (l == 0) {
+            return 0;
+        }
+        return l % 10 + sumDigits(l / 10);
+    }
+}
+
+
+
+---The end---
